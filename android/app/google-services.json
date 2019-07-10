@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1024638800357",
+    "firebase_url": "https://atpa-ff1f7.firebaseio.com",
+    "project_id": "atpa-ff1f7",
+    "storage_bucket": "atpa-ff1f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024638800357:android:08b1b595daa968dc",
+        "android_client_info": {
+          "package_name": "th.or.tpa.a_tpa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024638800357-e9al946oaivgsiqs1i161e0th75u16sa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCqcmuIb5_IehyhdcvQtc3wr13KugLEqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024638800357-e9al946oaivgsiqs1i161e0th75u16sa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
