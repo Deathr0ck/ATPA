@@ -13,8 +13,21 @@ class _AuthenState extends State<Authen> {
 
   final formKey = GlobalKey<FormState>();
   String emailString, passwordString;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
 // Method
+
+  void mySnackBar(String messageString) {
+    SnackBar snackBar = SnackBar(
+      content: Text(messageString),
+      duration: Duration(seconds: 8),backgroundColor: Colors.orange[900],
+      action: SnackBarAction(
+        label: 'Close',
+        onPressed: () {},
+      ),
+    );
+    scaffoldKey.currentState.showSnackBar(snackBar);
+  }
 
   @override
   void initState() {
@@ -127,6 +140,7 @@ class _AuthenState extends State<Authen> {
     }).catchError((response) {
       String messageString = response.message;
       print('message = $messageString');
+      mySnackBar(messageString);
     });
   }
 
@@ -171,6 +185,7 @@ class _AuthenState extends State<Authen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       resizeToAvoidBottomPadding: false,
       body: Container(
         decoration: BoxDecoration(
