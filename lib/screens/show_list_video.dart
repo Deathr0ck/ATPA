@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:a_tpa/models/non_video_model.dart';
+import 'package:a_tpa/screens/play_video.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -50,7 +51,7 @@ class _ShowListVideoState extends State<ShowListVideo> {
   Widget showImage(int index) {
     return Container(
       margin: EdgeInsets.all(5.0),
-      width: 180.0,
+      width: 150.0,
       height: 120.0,
       child: Image.network(
         nonVideoModels[index].pathImage,
@@ -94,18 +95,29 @@ class _ShowListVideoState extends State<ShowListVideo> {
       child: ListView.builder(
         itemCount: nonVideoModels.length,
         itemBuilder: (context, int index) {
-          return Container(
-            child: Column(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    showImage(index),
-                    showText(index),
-                  ],
-                ),
-                myDevider(),
-              ],
+          return GestureDetector(
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      showImage(index),
+                      showText(index),
+                    ],
+                  ),
+                  myDevider(),
+                ],
+              ),
             ),
+            onTap: () {
+              print('index = $index');
+
+              var playRoute = MaterialPageRoute(
+                  builder: (BuildContext context) => PlayVideo(
+                        nonVideoModel: nonVideoModels[index],
+                      ));
+              Navigator.of(context).push(playRoute);
+            },
           );
         },
       ),
